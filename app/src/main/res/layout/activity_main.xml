@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#f5f5f5">
+
+    <!-- Header -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My To-Do List"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#2196F3"
+        android:layout_marginBottom="24dp"
+        android:layout_marginTop="16dp" />
+
+    <!-- Input Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:padding="4dp"
+        android:backgroundTint="@android:color/white">
+
+        <EditText
+            android:id="@+id/task_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="What needs to be done?"
+            android:padding="16dp"
+            android:background="@android:color/transparent"
+            android:maxLines="1" />
+
+        <Button
+            android:id="@+id/add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD"
+            android:textAllCaps="false"
+            android:padding="16dp"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#2196F3"
+            android:textColor="@android:color/white"
+            android:elevation="2dp" />
+
+    </LinearLayout>
+
+    <!-- Todo List -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tasks"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"
+        android:textColor="#666" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/todo_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:color/white"
+        android:elevation="2dp" />
+
+</LinearLayout>
