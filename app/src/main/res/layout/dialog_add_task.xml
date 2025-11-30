@@ -9,47 +9,55 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Task Input -->
+        <!-- Task Title -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Task Title"
+            android:text="Task Title *"
             android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:layout_marginBottom="8dp" />
 
         <EditText
             android:id="@+id/dialog_task_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter task title"
-            android:padding="12dp"
+            android:padding="16dp"
             android:background="@drawable/edittext_background"
-            android:layout_marginBottom="16dp" />
+            android:textSize="16sp"
+            android:maxLines="1"
+            android:layout_marginBottom="20dp" />
 
-        <!-- Description Input -->
+        <!-- Description -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Description (Optional)"
+            android:text="Description"
             android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:layout_marginBottom="8dp" />
 
         <EditText
             android:id="@+id/dialog_description_input"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:hint="Enter task description"
-            android:padding="12dp"
+            android:layout_height="120dp"
+            android:hint="Enter task description (optional)"
+            android:padding="16dp"
             android:background="@drawable/edittext_background"
             android:gravity="top"
-            android:layout_marginBottom="16dp" />
+            android:textSize="14sp"
+            android:maxLines="5"
+            android:layout_marginBottom="20dp" />
 
         <!-- Category and Priority Row -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="20dp">
 
             <!-- Category -->
             <LinearLayout
@@ -57,20 +65,24 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:layout_marginEnd="8dp">
+                android:layout_marginEnd="12dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Category"
                     android:textStyle="bold"
-                    android:layout_marginBottom="4dp" />
+                    android:textSize="16sp"
+                    android:textColor="#333333"
+                    android:layout_marginBottom="8dp" />
 
                 <Spinner
                     android:id="@+id/dialog_category_spinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/spinner_background" />
+                    android:padding="12dp"
+                    android:background="@drawable/spinner_background"
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
@@ -80,50 +92,148 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:layout_marginStart="8dp">
+                android:layout_marginStart="12dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Priority"
                     android:textStyle="bold"
-                    android:layout_marginBottom="4dp" />
+                    android:textSize="16sp"
+                    android:textColor="#333333"
+                    android:layout_marginBottom="8dp" />
 
                 <Spinner
                     android:id="@+id/dialog_priority_spinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/spinner_background" />
+                    android:padding="12dp"
+                    android:background="@drawable/spinner_background"
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
         </LinearLayout>
 
-        <!-- Due Date -->
+        <!-- Due Date Section -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Due Date (Optional)"
+            android:text="Due Date"
             android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:layout_marginBottom="8dp" />
 
         <TextView
             android:id="@+id/dialog_due_date_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="No due date set"
-            android:padding="12dp"
+            android:text="No date selected"
+            android:padding="16dp"
             android:background="@drawable/edittext_background"
-            android:layout_marginBottom="8dp"
-            android:visibility="gone" />
+            android:textSize="14sp"
+            android:textColor="#757575"
+            android:layout_marginBottom="8dp" />
 
         <Button
             android:id="@+id/dialog_set_due_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Set Due Date"
+            android:text="📅 Select Date"
+            android:textAllCaps="false"
+            android:padding="12dp"
             android:backgroundTint="#2196F3"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:layout_gravity="start"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Due Time Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Due Time"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/dialog_due_time_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No time selected"
+            android:padding="16dp"
+            android:background="@drawable/edittext_background"
+            android:textSize="14sp"
+            android:textColor="#757575"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/dialog_set_due_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⏰ Select Time"
+            android:textAllCaps="false"
+            android:padding="12dp"
+            android:backgroundTint="#4CAF50"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:layout_gravity="start"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Reminder Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/reminder_background"
+            android:padding="16dp"
+            android:layout_marginBottom="20dp">
+
+            <CheckBox
+                android:id="@+id/dialog_reminder_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="#FF9800"
+                android:layout_marginEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Set Reminder"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="#333333" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Get notified 1 minutes before due time"
+                    android:textSize="12sp"
+                    android:textColor="#757575"
+                    android:layout_marginTop="4dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Info Text -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="* Required fields"
+            android:textSize="12sp"
+            android:textColor="#757575"
+            android:textStyle="italic"
+            android:layout_marginBottom="10dp" />
 
     </LinearLayout>
 

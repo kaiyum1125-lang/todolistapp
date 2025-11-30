@@ -2,46 +2,71 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!-- Filter Submenu -->
     <item
         android:id="@+id/menu_filter"
         android:title="Filter"
-        app:showAsAction="never">
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        app:showAsAction="ifRoom">
         <menu>
-            <item
-                android:id="@+id/menu_filter_all"
-                android:title="All Tasks" />
-            <item
-                android:id="@+id/menu_filter_completed"
-                android:title="Completed Only" />
-            <item
-                android:id="@+id/menu_filter_pending"
-                android:title="Pending Only" />
-            <item
-                android:id="@+id/menu_filter_category"
-                android:title="By Category" />
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_filter_all"
+                    android:title="All Tasks"
+                    android:checked="true" />
+                <item
+                    android:id="@+id/menu_filter_completed"
+                    android:title="Completed Only" />
+                <item
+                    android:id="@+id/menu_filter_pending"
+                    android:title="Pending Only" />
+                <item
+                    android:id="@+id/menu_filter_category"
+                    android:title="By Category" />
+            </group>
         </menu>
     </item>
 
+    <!-- Sort Submenu -->
     <item
         android:id="@+id/menu_sort"
         android:title="Sort"
-        app:showAsAction="never">
+        android:icon="@android:drawable/ic_menu_sort_alphabetically"
+        app:showAsAction="ifRoom">
         <menu>
-            <item
-                android:id="@+id/menu_sort_priority"
-                android:title="By Priority" />
-            <item
-                android:id="@+id/menu_sort_date"
-                android:title="By Due Date" />
-            <item
-                android:id="@+id/menu_sort_name"
-                android:title="By Name" />
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_sort_priority"
+                    android:title="By Priority"
+                    android:checked="true" />
+                <item
+                    android:id="@+id/menu_sort_date"
+                    android:title="By Due Date" />
+                <item
+                    android:id="@+id/menu_sort_name"
+                    android:title="By Name" />
+            </group>
         </menu>
     </item>
 
+    <!-- Quick Actions -->
+    <item
+        android:id="@+id/menu_upcoming_tasks"
+        android:title="Upcoming Tasks"
+        android:icon="@android:drawable/ic_menu_today"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_tasks_with_reminders"
+        android:title="Tasks with Reminders"
+        android:icon="@android:drawable/ic_lock_idle_alarm"
+        app:showAsAction="never" />
+
+    <!-- Actions -->
     <item
         android:id="@+id/menu_clear_completed"
         android:title="Clear Completed"
+        android:icon="@android:drawable/ic_menu_delete"
         app:showAsAction="never" />
 
 </menu>
